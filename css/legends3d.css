@@ -1,0 +1,42 @@
+.legends-section{position:relative;overflow:hidden;perspective:1200px;perspective-origin:50% 50%;padding:90px 0}
+.legends-section .quantum-container{position:relative;z-index:2}
+.legends-aurora{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:.45}
+.legends-aurora:before,.legends-aurora:after{content:"";position:absolute;width:200%;height:200%;top:-50%;left:-50%;border-radius:50%;animation:auroraShift 18s ease-in-out infinite alternate}
+.legends-aurora:before{background:radial-gradient(ellipse at 30% 40%,rgba(190,24,75,.15) 0%,transparent 50%),radial-gradient(ellipse at 70% 60%,rgba(61,92,184,.12) 0%,transparent 50%)}
+.legends-aurora:after{background:radial-gradient(ellipse at 60% 30%,rgba(0,255,200,.06) 0%,transparent 45%),radial-gradient(ellipse at 20% 70%,rgba(156,18,61,.1) 0%,transparent 50%);animation-delay:-6s;animation-duration:22s}
+@keyframes auroraShift{0%{transform:translate(0,0) rotate(0deg) scale(1)}33%{transform:translate(5%,-3%) rotate(8deg) scale(1.05)}66%{transform:translate(-3%,4%) rotate(-5deg) scale(.97)}100%{transform:translate(2%,-2%) rotate(12deg) scale(1.03)}}
+.legends-atom-canvas{position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:360px;height:360px;z-index:0;pointer-events:none;opacity:.38}
+.legends-bg-canvas{position:absolute;inset:0;z-index:1;pointer-events:none}
+.legends-section .section-hero-title{position:relative;z-index:3}
+.legends-section .section-hero-title h2{text-shadow:0 0 40px rgba(190,24,75,.35)}
+.legends-grid{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;transform-style:preserve-3d}
+.legend-card{position:relative;transform-style:preserve-3d;will-change:transform;backface-visibility:hidden;border-radius:var(--radius-lg);padding:22px 18px 24px;text-align:center;background:linear-gradient(145deg,rgba(9,17,54,.75) 0%,rgba(var(--card-glow,190,24,75),.08) 100%) !important;backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(var(--card-glow,190,24,75),.22) !important;transition:box-shadow .4s ease,border-color .4s ease;cursor:pointer;overflow:hidden}
+.legend-card:hover{box-shadow:0 0 45px -5px rgba(var(--card-glow,190,24,75),.45),0 25px 60px -15px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.15) !important;border-color:rgba(var(--card-glow,190,24,75),.55) !important}
+.legend-card:before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(255,255,255,.12) 0%,transparent 65%);pointer-events:none;opacity:0;transition:opacity .3s;z-index:4}
+.legend-card:hover:before{opacity:1}
+.legend-card:after{content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from var(--border-angle,0deg),transparent 0%,var(--card-color,rgba(190,24,75,.6)) 18%,transparent 35%,rgba(61,92,184,.35) 55%,transparent 70%,var(--card-color,rgba(190,24,75,.4)) 85%,transparent 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;z-index:0;animation:rotateBorder 5s linear infinite;opacity:0;transition:opacity .4s ease}
+.legend-card:hover:after{opacity:1}
+@keyframes rotateBorder{to{--border-angle:360deg}}
+.legend-card:nth-child(1){--card-color:rgba(34,197,94,.7);--card-glow:34,197,94}
+.legend-card:nth-child(2){--card-color:rgba(168,85,247,.7);--card-glow:168,85,247}
+.legend-card:nth-child(3){--card-color:rgba(59,130,246,.7);--card-glow:59,130,246}
+.legend-card:nth-child(4){--card-color:rgba(251,191,36,.7);--card-glow:251,191,36}
+.legend-card:nth-child(5){--card-color:rgba(6,182,212,.7);--card-glow:6,182,212}
+.legend-card:nth-child(6){--card-color:rgba(244,63,94,.7);--card-glow:244,63,94}
+.legend-stage-3d{position:relative;width:100%;height:140px;margin:0 auto 12px;border-radius:var(--radius-md);background:radial-gradient(circle at 50% 50%,rgba(var(--card-glow,190,24,75),.15) 0%,rgba(2,4,20,.6) 80%);border:1px solid rgba(var(--card-glow,190,24,75),.18);overflow:hidden;transform:translateZ(40px);transition:transform .4s var(--ease-elastic),box-shadow .4s ease}
+.legend-card:hover .legend-stage-3d{transform:translateZ(55px) scale(1.03);box-shadow:0 0 30px rgba(var(--card-glow,190,24,75),.35)}
+.legend-stage-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
+.legend-badge-holo{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:1rem;color:#fff;background:linear-gradient(135deg,rgba(var(--card-glow,190,24,75),.8),rgba(9,17,54,.9));border:1px solid rgba(var(--card-glow,190,24,75),.6);box-shadow:0 0 15px rgba(var(--card-glow,190,24,75),.5);z-index:3;transform:translateZ(60px);transition:transform .3s ease}
+.legend-card:hover .legend-badge-holo{transform:translateZ(75px) scale(1.15) rotate(10deg)}
+.legend-card h4{font-weight:900;font-size:1.15rem;color:var(--text-pure);margin-bottom:5px;transform:translateZ(30px);transition:color .3s,text-shadow .3s}
+.legend-card:hover h4{color:#fff;text-shadow:0 0 16px rgba(var(--card-glow,190,24,75),.8)}
+.legend-field{display:inline-block;padding:3px 12px;border-radius:var(--radius-pill);background:rgba(var(--card-glow,190,24,75),.15);border:1px solid rgba(var(--card-glow,190,24,75),.35);color:var(--card-color,var(--maroon-glow));font-size:.78rem;font-weight:800;margin-bottom:10px;transform:translateZ(25px)}
+.legend-card p{color:var(--text-dim);font-size:.86rem;line-height:1.75;transform:translateZ(20px)}
+.legend-card .legend-badge{display:none}
+.legend-formula-tag{position:absolute;font-family:var(--font-mono);font-size:.7rem;font-weight:800;color:rgba(var(--card-glow,190,24,75),.85);background:rgba(2,4,20,.85);border:1px solid rgba(var(--card-glow,190,24,75),.5);padding:3px 8px;border-radius:var(--radius-pill);pointer-events:none;z-index:6;white-space:nowrap;box-shadow:0 0 12px rgba(var(--card-glow,190,24,75),.3);opacity:0;transform:translateZ(45px) scale(.8);transition:all .4s var(--ease-expo)}
+.legend-card:hover .legend-formula-tag{opacity:1;transform:translateZ(65px) scale(1)}
+.legend-click-ripple{position:absolute;border-radius:50%;border:2px solid rgba(var(--card-glow,190,24,75),.8);pointer-events:none;animation:clickRipple .75s cubic-bezier(0,0,.2,1) forwards;z-index:10}
+@keyframes clickRipple{0%{width:0;height:0;opacity:1;transform:translate(-50%,-50%) scale(0)}100%{width:350px;height:350px;opacity:0;transform:translate(-50%,-50%) scale(1)}}
+@media(max-width:1024px){.legends-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.legends-grid{grid-template-columns:1fr}.legends-atom-canvas{display:none}}
+@media(prefers-reduced-motion:reduce){.legends-aurora:before,.legends-aurora:after,.legend-card:after{animation:none !important}}
