@@ -40,3 +40,5 @@
 @media(max-width:1024px){.legends-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.legends-grid{grid-template-columns:1fr}.legends-atom-canvas{display:none}}
 @media(prefers-reduced-motion:reduce){.legends-aurora:before,.legends-aurora:after,.legend-card:after{animation:none !important}}
+
+@media(max-width:768px){.legends-section{padding:45px 0!important}.legends-grid{grid-template-columns:1fr!important;gap:16px!important}.legend-card{padding:16px 12px 18px!important}.legend-stage-3d{height:115px!important}.legends-atom-canvas{display:none!important}.legend-formula-tag{font-size:.62rem!important;padding:2px 6px!important}}@media(max-width:480px){.legend-card{padding:14px 10px 16px!important}.legend-stage-3d{height:105px!important}.legend-badge-holo{width:32px!important;height:32px!important;font-size:.85rem!important;top:8px!important;right:8px!important}.legend-card h4{font-size:1.05rem!important}.legend-field{font-size:.72rem!important;padding:2px 8px!important}.legend-card p{font-size:.8rem!important;line-height:1.65!important}}
